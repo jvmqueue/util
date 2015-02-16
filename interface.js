@@ -18,7 +18,7 @@ jvm.util = (function(w, d){
 				return false;
 			};
 			return false; // optimization: in production, interface shutdown
-		};
+		}
 
 		if(arguments.length != 2){ // Interfaces must have an object and an array of method names
 			throw new Error('Exception: jvm.util.Interface constructor called with ' + arguments.length + ' arguments, but expect exactly 2');
