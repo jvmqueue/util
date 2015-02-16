@@ -8,13 +8,17 @@
  <h3>Example</h3>
 
 ```
-	var F = function(){};
- 	F.prototype = {
- 		clean:function(){}
- 	};
- 	var fInterface = new jvm.Interface('fInterface', ['clean']);
- 	/* now, test if F satisfies fInterface via jvm.Interface static method */
- 	jvm.Interface.ensureImplements(F, fInterface);
+		var MyFunction = function(){};
+	 	MyFunction.prototype = {
+	 		clean:function(){},
+	 		display:function(){},
+	 		anyMethod:function(){},
+	 		name:'MyFunction' // name property required by jvm.util.Interface. Allows Interface to throw meaningful exceptions
+	 	};
+
+		var myFunction = new MyFunction();
+		var interfaceMyFunction = new jvm.util.Interface(interfaceMyFunction, ['clean', 'display', 'anyMethod']);
+		jvm.util.Interface.ensureImplements(myFunction, interfaceMyFunction);	
 
 ```
 
