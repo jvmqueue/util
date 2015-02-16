@@ -15,8 +15,8 @@
 	 		anyMethod:function(){},
 	 		name:'MyFunction' // name property required by jvm.util.Interface. Allows Interface to throw meaningful exceptions
 	 	};
-
-		jvm.util.shutDownInterface(<true or false>); // optimization: shuts down interface when released to production
+		/* optimization: shutdown all interfaces for production environments */
+		jvm.util.shutDownInterface(<true or false>);
 		var myFunction = new MyFunction();
 		var interfaceMyFunction = new jvm.util.Interface(interfaceMyFunction, ['clean', 'display', 'anyMethod']);
 		jvm.util.Interface.ensureImplements(myFunction, interfaceMyFunction);	
