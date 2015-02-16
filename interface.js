@@ -2,7 +2,23 @@
 var jvm = jvm || {};
 jvm.util = (function(w, d){
 
+	var switches = {
+		interfaceIsOff:false
+	};
+
+	var _isOff = function(paramBlnInterfaceIsOff){
+		var blnIsOff = paramBlnInterfaceIsOff;	
+		switches.interfaceIsOff = blnIsOff;
+	};		
+
 	var _Interface = function(paramName, paramMethods){
+
+		if(switches.interfaceIsOff === true){
+			_Interface.ensureImplements = function(){ // override static method to prevent it from executing
+				return false;
+			};
+			return false; // optimization: in production, interface shutdown
+		};
 
 		if(arguments.length != 2){ // Interfaces must have an object and an array of method names
 			throw new Error('Exception: jvm.util.Interface constructor called with ' + arguments.length + ' arguments, but expect exactly 2');
@@ -19,6 +35,7 @@ jvm.util = (function(w, d){
 
 			this.methods.push(methods[i]); // method is a string, store in instance
 		}
+
 	};
 	// static method
 	_Interface.ensureImplements = function(paramObject){ // static method, must involk directly through jvm.util.Interface. Cannot be accessed through instance
@@ -28,8 +45,8 @@ jvm.util = (function(w, d){
 		if(arguments.length < 2){
 			throw new Error('Exception: jvm.util.Interface.ensureImplements called with ' + arguments.length + ' arguments, but expects at least 2');
 		}
-
-		if(!object['name']){
+		var strName = 'name'; // used to prevent js lint from failing object.name fails in IE. Using hash notation via variable
+		if(!object[strName]){
 			throw new Error('Exception: jvm.util.Interface.ensureImplements expects object to have name property');
 		}
 
@@ -51,7 +68,8 @@ jvm.util = (function(w, d){
 
 
 	return{ // public API
-		Interface:_Interface
+		Interface:_Interface,
+		shutDownInterface:_isOff
 	};
 
 
