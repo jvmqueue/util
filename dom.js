@@ -1,6 +1,6 @@
 var jvm = jvm || {};
 /**
-     Used: closure for any member in scripts/view.js
+     Used: closure for any member in jvm.dom
      @alias jvm.util
      @namespace
  */
