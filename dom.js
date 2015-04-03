@@ -1,7 +1,7 @@
 var jvm = jvm || {};
 /**
      Used: closure for any member in jvm.dom
-     @alias jvm.util
+     @alias jvm.dom
      @namespace
  */
 jvm.dom = (function(w, d){ // agnositic, no library dependecies
