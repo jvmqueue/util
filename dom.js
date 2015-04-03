@@ -8,7 +8,7 @@ jvm.dom = (function(w, d){ // agnositic, no library dependecies
 
     /**
 	     Used: namespace for any dom method: appending, adding events, node manipulation
-	     @alias _dom
+	     @alias dom
 	     @namespace
      */
 	
@@ -16,7 +16,7 @@ jvm.dom = (function(w, d){ // agnositic, no library dependecies
 		Used: set any listener, native or custom
 		@member
 		@example
-		_dom.setListener({$node:$('#idNode'), event:'click', data:'anyData', listener:myListener});	 
+		dom.setListener({$node:$('#idNode'), event:'click', data:'anyData', listener:myListener});	 
 	 */        
 		var _setListener = function(options){			
 			options.$node.on(options.event, options.data, options.listener);
@@ -26,7 +26,7 @@ jvm.dom = (function(w, d){ // agnositic, no library dependecies
 			var x = nodeTarget.parentNode.offsetLeft + nodeTarget.scrollLeft;
 			var y = nodeTarget.offsetTop - nodeTarget.scrollTop;
 			return{ordinate:x, absissa:y};
-		}; // End getMousePosition
+		}; // End _getMousePosition
 
 	return{ // public API
 		setListener:_setListener,
