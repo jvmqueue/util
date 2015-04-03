@@ -31,7 +31,7 @@ jvm.dom = (function(w, d, $){ // depends on jQuery
 		var nodeTarget = paramNode;
 		var x = nodeTarget.parentNode.offsetLeft + nodeTarget.scrollLeft;
 		var y = nodeTarget.offsetTop - nodeTarget.scrollTop;
-		return{ordinate:x, absissa:y};
+		return{ordinate:x, abscissa:y};
 	}; // End _getMousePosition
 
 	return{ // public API
