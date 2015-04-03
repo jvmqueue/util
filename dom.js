@@ -4,7 +4,7 @@ var jvm = jvm || {};
      @alias jvm.dom
      @namespace
  */
-jvm.dom = (function(w, d){ // agnositic, no library dependecies
+jvm.dom = (function(w, d, $){ // depends on jQuery
 
     /**
 	     Used: namespace for any dom method: appending, adding events, node manipulation
@@ -16,20 +16,26 @@ jvm.dom = (function(w, d){ // agnositic, no library dependecies
 		Used: set any listener, native or custom
 		@member
 		@example
-		dom.setListener({$node:$('#idNode'), event:'click', data:'anyData', listener:myListener});	 
+		jvm.dom.setListener({$node:$('#idNode'), event:'click', data:'anyData', listener:myListener});	 
 	 */        
-		var _setListener = function(options){			
-			options.$node.on(options.event, options.data, options.listener);
-		};
-		var _getMousePosition = function(paramNode){
-			var nodeTarget = paramNode;
-			var x = nodeTarget.parentNode.offsetLeft + nodeTarget.scrollLeft;
-			var y = nodeTarget.offsetTop - nodeTarget.scrollTop;
-			return{ordinate:x, absissa:y};
-		}; // End _getMousePosition
+	var _setListener = function(options){			
+		options.$node.on(options.event, options.data, options.listener);
+	};
+	/**
+		Used: get x, y coordinates relative to mouse cursor
+		@member
+		@example
+		jvm.dom.setListener(any node);	 
+	 */        		
+	var _getMousePosition = function(paramNode){
+		var nodeTarget = paramNode;
+		var x = nodeTarget.parentNode.offsetLeft + nodeTarget.scrollLeft;
+		var y = nodeTarget.offsetTop - nodeTarget.scrollTop;
+		return{ordinate:x, absissa:y};
+	}; // End _getMousePosition
 
 	return{ // public API
 		setListener:_setListener,
 		getMousePosition:_getMousePosition
 	};
-})(window, document);
+})(window, document, jQuery);
