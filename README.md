@@ -1,3 +1,28 @@
+<h1>RegEx</h1>
+ 
+<p>Used for validation against regular expressions</p>
+
+<h2>Use</h2>
+<p>Allows generic calls on regular expresions</p>
+<p>Regular expressions are quite abstract. This library makes it easier to reuse regular expressions without having to know RegExp</p>
+ <h3>Example</h3>
+
+```
+            var myValue = 'any string';
+            var isAlpha = jvm.regex.fnc.blnIsAlpha(myValue, 1);
+            var isNumeric = jvm.regex.fnc.blnIsNumeric(myValue, 2);
+            var notPrintable = jvm.regex.fnc.blnNotPrintable(myValue);
+            var isWhiteSpace = jvm.regex.fnc.blnIsWhiteSpace(myValue);
+
+```
+
+<h3>Stategies and Techniques</h3>
+<ul>
+	<li>Closure for encapsulation</li>
+	<li>Namespacing to reduce probability of variable collisions</li>
+	<li>Grunt for CSS lint, JS Lint, and jsDoc</li>
+</ul>
+
 <h1>Interface Class</h1>
  
 <p>Used to ensure a given object supports, has, methods defined in interface</p>
