@@ -13,6 +13,7 @@
             var isNumeric = jvm.regex.fnc.blnIsNumeric(myValue, 2);
             var notPrintable = jvm.regex.fnc.blnNotPrintable(myValue);
             var isWhiteSpace = jvm.regex.fnc.blnIsWhiteSpace(myValue);
+            var isInString = jvm.regex.fnc.blnIsInString(myString, 'findInString');
 
 ```
 
