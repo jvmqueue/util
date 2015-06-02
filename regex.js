@@ -15,7 +15,11 @@ jvm.regex = (function(w, d, $){
 		},
 		blnIsWhiteSpace:function(paramString){
 			return ( /[\x00-\x08\x0E-\x1F]/.test(paramString) );
-		}
+		},
+		blnIsInString:function(paramString, paramStringToFind){
+			var reg = new RegExp(paramStringToFind);
+			return ( reg.test(paramString) );		
+		}		
 	};
 	return{
 		fnc:_fnc
