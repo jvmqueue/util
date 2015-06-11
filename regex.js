@@ -24,7 +24,7 @@ define([''], function(undefined){  // no dependencies
 			var UNICODE_LEFT = 40;
 			var UNICODE_RIGHT = 41;			
 			var unicodeCharVal = paramString.charCodeAt( paramString.charAt(paramIntPosition) );        
-			return ( (unicodeCharVal === UNICODE_LEFT)  || (unicodeCharVal === UNICODE_RIGHT) );
+			return ( (unicodeCharVal === UNICODE_LEFT) || (unicodeCharVal === UNICODE_RIGHT) );
 		}		
 	};
 	return{
