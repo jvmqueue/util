@@ -1,8 +1,8 @@
-var jvm = jvm || {};
-jvm.regex = (function(w, d, $){
+define([''], function(undefined){  // no dependencies
+
 	var _fnc = {
 		blnNotPrintable:function(paramString){
-			return ( /[\x00-\x1F]/.test(paramString) );
+			return /[\x00-\x1F]/.test(paramString);
 		},
 		blnIsAlpha:function(paramString, paramIntPosition){
 			var UNICODE_FIRST_ALPHA = 65;
@@ -19,9 +19,17 @@ jvm.regex = (function(w, d, $){
 		blnIsInString:function(paramString, paramStringToFind){
 			var reg = new RegExp(paramStringToFind);
 			return ( reg.test(paramString) );		
+		},
+		blnIsParenthesis:function(paramString, paramIntPosition){
+			var UNICODE_LEFT = 40;
+			var UNICODE_RIGHT = 41;			
+			var unicodeCharVal = paramString.charCodeAt( paramString.charAt(paramIntPosition) );        
+			return ( (unicodeCharVal === UNICODE_LEFT)  || (unicodeCharVal === UNICODE_RIGHT) );
 		}		
 	};
 	return{
 		fnc:_fnc
 	};
-})(window, document, jQuery);
+
+
+}); // End define
