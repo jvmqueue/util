@@ -28,7 +28,7 @@
 
 <h3>Dependencies</h3>
 <ul>
-    <li>dom.js for jvm.dom.setListener/li>
+    <li>dom.js for jvm.dom.setListener</li>
     <li>jQuery for DOM methods</li>
 </ul>
 
