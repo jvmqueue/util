@@ -43,7 +43,7 @@
             });
 
             var nodeExist = document.getElementById('someExistingId');
-            var positionCursor = jvm.dom._getMousePosition(nodeExist);
+            var positionCursor = jvm.dom.getMousePosition(nodeExist);
             var intX = positionCursor.ordinate;
             var intY = positionCursor.abscissa;
 
