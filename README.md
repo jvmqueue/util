@@ -24,6 +24,41 @@
 	<li>Grunt for CSS lint, JS Lint, and jsDoc</li>
 </ul>
 
+
+
+<h1>dom</h1>
+ 
+<p>Used for generic DOM methods</p>
+
+<h2>Use</h2>
+<p>DOM utilities</p>
+<p></p>
+ <h3>Examples</h3>
+```
+            jvm.dom.setListener({
+                $node:$('#someExistingId'),
+                event:'anyEventCustomOrPrimitive',
+                data:{anyData:'any data you want to send to the event listener'},
+                listener:functionMyListener
+            });
+
+            var nodeExist = document.getElementById('someExistingId');
+            var positionCursor = jvm.dom._getMousePosition(nodeExist);
+            var intX = positionCursor.ordinate;
+            var intY = positionCursor.abscissa;
+
+```
+<h3>Stategies and Techniques</h3>
+<ul>
+    <li>Closure for encapsulation</li>
+    <li>Namespacing to reduce probability of variable collisions</li>
+    <li>jQuery for DOM methods</li>
+</ul>
+
+
+
+
+
 <h1>Interface Class</h1>
  
 <p>Used to ensure a given object supports, has, methods defined in interface</p>
@@ -55,6 +90,9 @@
 <dl>
 	<dd>JavaScript Resource</dd>
 </dl>
+
+
+
 
 
 
