@@ -18,11 +18,6 @@
             listener:listenerDataRetrieved
         });
 
-            var nodeExist = document.getElementById('someExistingId');
-            var positionCursor = jvm.dom.getMousePosition(nodeExist);
-            var intX = positionCursor.ordinate;
-            var intY = positionCursor.abscissa;
-
 ```
 <h3>Stategies and Techniques</h3>
 <ul>
