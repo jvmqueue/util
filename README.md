@@ -1,3 +1,45 @@
+<h1>httpRequest</h1>
+ 
+<p>Used for HTTP Requests</p>
+
+<h2>Use</h2>
+<p>Generic AJAX... Upon data retrieved, fires custom event listener</p>
+<p></p>
+ <h3>Examples</h3>
+```
+        function listenerDataRetrieved(e, paramData){
+            console.log('your data sent back by jvm.httpRequest.fnc.getData: ', paramData);
+        }
+
+        jvm.dom.setListener({ // define custom event for httpRequest to trigger once data retrivevd
+            $node:$('#ExistingNodeId'),
+            event:'data:retrieved',
+            data:{anyDataYouWantToSendToListner:'my data from setListener'},
+            listener:listenerDataRetrieved
+        });
+
+            var nodeExist = document.getElementById('someExistingId');
+            var positionCursor = jvm.dom.getMousePosition(nodeExist);
+            var intX = positionCursor.ordinate;
+            var intY = positionCursor.abscissa;
+
+```
+<h3>Stategies and Techniques</h3>
+<ul>
+    <li>Closure for encapsulation</li>
+    <li>Custom DOM event listener for when data retrieved. Technique avoids those ugly call backs</li>
+    <li>jQuery for DOM methods</li>
+</ul>
+
+<h3>Dependencies</h3>
+<ul>
+    <li>dom.js for jvm.dom.setListener/li>
+    <li>jQuery for DOM methods</li>
+</ul>
+
+
+
+
 <h1>RegEx</h1>
  
 <p>Used for validation against regular expressions</p>
@@ -54,10 +96,6 @@
     <li>Namespacing to reduce probability of variable collisions</li>
     <li>jQuery for DOM methods</li>
 </ul>
-
-
-
-
 
 <h1>Interface Class</h1>
  
