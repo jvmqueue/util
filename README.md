@@ -18,6 +18,16 @@
             listener:listenerDataRetrieved
         });
 
+        // the $node and event to trigger once data retrieved
+        // httpRequest sends data back through triggering handler
+        var req = jvm.httpRequest.fnc.getData({ // could wait for !!req and get data via req.requestText
+            path:'data/education.json',
+            cache:true,
+            fileType:'json',
+            event:'data:retrieved',
+            $node:$('#ExistingNodeId')
+        });        
+
 ```
 <h3>Stategies and Techniques</h3>
 <ul>
