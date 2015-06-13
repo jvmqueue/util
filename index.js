@@ -35,14 +35,14 @@
         var nodeText = null;
         var $nodeExist = $('#yourdata');
 
-        for(var name in json){
+        for(var name in json){ // intentional old school methods
             nodeText = d.createTextNode(paramDataFromTriggerHandler.resume[name]);
             nodeNew = d.createElement('p');
             nodeNew.appendChild(nodeText);
             frag.appendChild(nodeNew);
         }
         
-        $nodeExist.html(frag);
+        $nodeExist.append(frag); // OK. lets us jQuery
     };
 
     var intervalDom = w.setInterval(function(){ // wait for DOM, we do not need jQuery for this
