@@ -2,7 +2,7 @@
 
     var main = function(){
 
-        jvm.dom.setListener({ // define custom event for httpRequest to trigger once data retrivevd
+        jvm.dom.setListener({ // define custom event for httpRequest to trigger once data retrieved
             $node:$('#container'),
             event:'data:retrieved',
             data:{anyDataYouWantToSendToListner:'my data from setListener'},
