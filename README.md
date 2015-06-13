@@ -61,7 +61,7 @@
             var notPrintable = jvm.regex.fnc.blnNotPrintable(myValue);
             var isWhiteSpace = jvm.regex.fnc.blnIsWhiteSpace(myValue);
             var isInString = jvm.regex.fnc.blnIsInString(myString, 'findInString');
-
+            var isParenthesis = jvm.regex.fnc.blnIsParenthesis(myString, 1);
 ```
 
 <h3>Stategies and Techniques</h3>
