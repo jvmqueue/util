@@ -124,15 +124,13 @@
 		var myFunction = new MyFunction();
 		var interfaceMyFunction = new jvm.util.Interface(interfaceMyFunction, ['clean', 'display', 'anyMethod']);
 		jvm.util.Interface.ensureImplements(myFunction, interfaceMyFunction);	
-
 ```
-
 <h3>Stategies and Techniques</h3>
-
-<h4>Fundemental Architecture</h4>
-<dl>
-	<dd>JavaScript Resource</dd>
-</dl>
+<ul>
+    <li>Closure for encapsulation</li>
+    <li>Namespacing to reduce probability of variable collisions</li>
+    <li>jQuery is intentionally NOT used</li>
+</ul>
 
 
 
