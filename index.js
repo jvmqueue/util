@@ -24,7 +24,7 @@
             event:'data:retrieved',
             path:'data/education.json',
             fileType:'json',
-            cache:true
+            cache:true // set to false if you dont want to data cached on the client
         });
     };
 
