@@ -25,7 +25,14 @@ define([''], function(undefined){  // no dependencies
 			var UNICODE_RIGHT = 41;			
 			var unicodeCharVal = paramString.charCodeAt( paramString.charAt(paramIntPosition) );        
 			return ( (unicodeCharVal === UNICODE_LEFT) || (unicodeCharVal === UNICODE_RIGHT) );
-		}		
+		},
+		getIdFromString:function(paramString){
+			var reg = /(^|\W)id="(\w+)/g;		
+			var arrayReg = reg.exec(paramString);
+			var strId = arrayReg[2];
+			return strId;
+		}
+		
 	};
 	return{
 		fnc:_fnc
