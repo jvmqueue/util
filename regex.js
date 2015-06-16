@@ -26,7 +26,7 @@ define([''], function(undefined){  // no dependencies
 			var unicodeCharVal = paramString.charCodeAt( paramString.charAt(paramIntPosition) );        
 			return ( (unicodeCharVal === UNICODE_LEFT) || (unicodeCharVal === UNICODE_RIGHT) );
 		},
-		getIdFromString:function(paramString){
+		strIdFromString:function(paramString){
 			var reg = /(^|\W)id="(\w+)/g;		
 			var arrayReg = reg.exec(paramString);
 			var strId = arrayReg[2];
