@@ -7,11 +7,16 @@ jvm.httpRequest = (function(w, d, $, undefined){
         return $.ajax({ // return the response so that callee does not have to look for reponse
             url:options.path + ( !!options.cache ? '' : '?noCache=' + noCache ),
             context:d.body,
+            'text.xml':options.fileType === 'xml' ? jQuery.parseXML : '',
             crossDomain:false,
             dataType:( !!options.fileType ? options.fileType : 'xml' ),
-            ifModified:true,      
+            ifModified:true,
+            $node:options.$node || false,
+            event:options.event || false,
             success:function(paramData){
-              options.$node.triggerHandler(options.event, [paramData]);
+              if(!!options.event){ // fire listener if it was set
+                options.$node.triggerHandler(options.event, [paramData]); // pass the request data to the listener
+              }
             },
             statusCode:{
               404:function(){
