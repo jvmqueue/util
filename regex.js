@@ -4,9 +4,6 @@ define([''], function(undefined){  // no dependencies
         blnNotPrintable:function(paramString){
             return /[\x00-\x1F]/.test(paramString);
         },
-        blnNotEmail:function(paramString){
-            return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(paramString);
-        },        
         blnIsAlpha:function(paramString, paramIntPosition){
             var UNICODE_FIRST_ALPHA = 65;
             var UNICODE_LAST_ALPHA = 122;
@@ -29,16 +26,24 @@ define([''], function(undefined){  // no dependencies
             var unicodeCharVal = paramString.charCodeAt( paramString.charAt(paramIntPosition) );        
             return ( (unicodeCharVal === UNICODE_LEFT) || (unicodeCharVal === UNICODE_RIGHT) );
         },
-        strIdFromString:function(paramString){
+        getIdFromString:function(paramString){
             var reg = /(^|\W)id="(\w+)/g;       
             var arrayReg = reg.exec(paramString);
             var strId = arrayReg[2];
             return strId;
-        }
+        },
+        strRemoveWhiteSpace:function(paramString){
+            var reg = /(\s)/gi; 
+            if(paramString === null){
+                return 'regex util.fnc paramString not received as parameter';
+            }
+            return paramString.replace(reg, '');
+        }        
         
     };
     return{
         fnc:_fnc
     };
+
 
 }); // End define
