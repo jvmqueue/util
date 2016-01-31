@@ -49,13 +49,19 @@ define([''], function(undefined){  // no dependencies
             var reg = new RegExp(paramString); 
             return paramString.replace(paramStringToReplace, paramReplacement);
         },
+        blnEmailIsValidFormat:function(paramString){            
+            var regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regEx.test(paramString);
+        },
         strReplaceAllSpecialChars:function(paramString){
-            return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
+            /*Remove all Characters*/
+            // return paramString.replace(/[`~!@#$%^&*()_|+\-=÷¿?;:'",.<>\{\}\[\]\\\n\/]/gi, ' ');
+            /*Remove all Characters, NOT periods or commas or apostrophes*/
+            return paramString.replace(/[~!@#$%^&*()_|+\-=÷¿?;:"<>\{\}\[\]\\\n\/]/gi, ' ');
         }                
     };
     return{
         fnc:_fnc
     };
-
 
 }); // End define
