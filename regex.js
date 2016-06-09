@@ -14,6 +14,9 @@ define([''], function(undefined){  // no dependencies
         blnIsNumeric:function(paramString, paramIntPosition){
             return ( !isNaN( paramString.charAt(paramIntPosition) ) );
         },
+        blnIsInteger:function(paramString){
+            return ( /^\d+$/.test(paramString) );
+        },        
         blnIsWhiteSpace:function(paramString){
             return ( /[\x00-\x08\x0E-\x1F]/.test(paramString) );
         },
