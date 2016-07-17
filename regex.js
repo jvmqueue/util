@@ -48,9 +48,11 @@ define([''], function(undefined){  // no dependencies
             }
             return paramString.replace(reg, '');
         },
-        strReplace:function(paramString, paramStringToReplace, paramReplacement){
-            var reg = new RegExp(paramString); 
-            return paramString.replace(paramStringToReplace, paramReplacement);
+        strReplace:function(paramString, paramStringToReplace, paramReplacement, paramBlnReplaceAll){
+            var regSwitchGlobal = null;
+            paramBlnReplaceAll === true ? regSwitchGlobal = 'g' : regSwitchGlobal = '';
+            var reg = new RegExp(paramStringToReplace, regSwitchGlobal);
+            return paramString.replace(reg, paramReplacement);
         },
         blnEmailIsValidFormat:function(paramString){            
             return /^[a-zA-Z]([a-zA-Z0-9_\-])+([\.][a-zA-Z0-9_]+)*\@((([a-zA-Z0-9\-])+\.){1,2})([a-zA-Z0-9]{2,40})$/.test(paramString);
