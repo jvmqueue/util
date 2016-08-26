@@ -1,6 +1,6 @@
 define([''], function(undefined){  // no dependencies
     'use strict';
-
+// test comment
     var _fnc = {
         blnNotPrintable:function(paramString){
             return /[\x00-\x1F]/.test(paramString);
