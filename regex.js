@@ -1,6 +1,5 @@
 define([''], function(undefined){  // no dependencies
     'use strict';
-// test comment
     var _fnc = {
         blnNotPrintable:function(paramString){
             return /[\x00-\x1F]/.test(paramString);
@@ -48,10 +47,12 @@ define([''], function(undefined){  // no dependencies
             }
             return paramString.replace(reg, '');
         },
-        strReplace:function(paramString, paramStringToReplace, paramReplacement, paramBlnReplaceAll){
+        strReplace:function(paramString, paramStringToReplace, paramReplacement, paramBlnReplaceAll, paramBlnCaseInsensitive){
             var regSwitchGlobal = null;
+            var regSwitchNotCaseSensitive = null;
             paramBlnReplaceAll === true ? regSwitchGlobal = 'g' : regSwitchGlobal = '';
-            var reg = new RegExp(paramStringToReplace, regSwitchGlobal);
+            paramBlnCaseInsensitive === true ? regSwitchNotCaseSensitive = 'i' : regSwitchNotCaseSensitive = '';
+            var reg = new RegExp(paramStringToReplace, regSwitchGlobal + regSwitchNotCaseSensitive);
             return paramString.replace(reg, paramReplacement);
         },
         blnEmailIsValidFormat:function(paramString){            
