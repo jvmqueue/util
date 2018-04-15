@@ -17,6 +17,7 @@ jvm.dom = (function(w, d, $){ // depends on jQuery
 		@member
 		@example
 		jvm.dom.setListener({$node:$('#idNode'), event:'click', data:'anyData', listener:myListener});	 
+		test for check-in
 	 */        
 	var _setListener = function(options){			
 		options.$node.on(options.event, options.data, options.listener);
